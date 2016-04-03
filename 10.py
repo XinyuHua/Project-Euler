@@ -3,21 +3,19 @@ import time, sys, math
 def main():
     t0 = time.clock()
     argument = int(sys.argv[1])
-    ans = NthPrime(argument)
-   # ans = isPrime(argument)
+    ans = summationOfPrimes(argument)
     print ans
     t1 = time.clock()
     print 'Time elapsed: %.3f sec' % (t1 - t0)
 
-def NthPrime(N):
-    cnt = 1
+def summationOfPrimes(N):
     i = 3
-    while cnt < N:
+    sum = 2
+    while i < N:
         if isPrime(i):
-#            print i
-            cnt += 1
+            sum += i
         i += 2
-    return i - 2
+    return sum
 
 def isPrime(N):
     if N < 4:
